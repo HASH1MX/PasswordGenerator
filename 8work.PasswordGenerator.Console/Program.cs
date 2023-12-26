@@ -11,8 +11,29 @@ namespace PasswordGeneratorTester
         {
             PasswordGenerator PG = new PasswordGenerator();
 
-            string resultGenerate = PG.Generate();
-            Console.WriteLine(resultGenerate);
+            string resultGenerate1 = PG.Generate(8);
+            Console.WriteLine(resultGenerate1);
+
+            string resultGenerate2 = PG.Generate(isNumeric: true, length: 10);
+            Console.WriteLine(resultGenerate2);
+
+
+            string resultGenerate3 = PG.Generate(false, 12);
+            Console.WriteLine(resultGenerate3);
+
+            string resultGenerate4 = PG.Generate(true, false, 10);
+            Console.WriteLine(resultGenerate4);
+
+            resultGenerate4 = PG.Generate(true, true, 10);
+            Console.WriteLine(resultGenerate4);
+
+            resultGenerate4 = PG.Generate(isNumeric: false, isSpecial: false, length: 10);
+            Console.WriteLine(resultGenerate4);
+
+            resultGenerate4 = PG.Generate(10);
+            Console.WriteLine(resultGenerate4);
+
+
         }
     }
 }
